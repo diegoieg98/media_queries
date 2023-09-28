@@ -1,0 +1,239 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+    "nav"
+    "filtro"
+    "main"
+    "footer";
+    grid-template-rows: 100px 100px 70% 100px;
+}
+/* navbar */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    grid-area: nav;
+    background-color: rgb(0, 85, 160);
+    color: white;
+}
+nav div{
+    display: flex;
+}
+nav div p{
+    padding-left: 5px;
+}
+.electric{
+    padding-left: 5px;
+    align-items: center;
+}
+nav img{
+    width: 30px;
+}
+.lista{
+    display: none;
+}
+/* section */
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+section select{
+    width: 80%;
+    height: 35px;
+    background-color: white;
+    border-radius: 7px;
+}
+.filtro{
+    grid-area: filtro;
+}
+/* main */
+.main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    gap: 20px;
+}
+.cards,button{
+    align-items: center;
+    flex-direction: column;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    padding: 15px;
+    border: solid rgb(203, 203, 203) 2px;
+    border-radius: 10px;
+    color: rgb(86, 86, 86) ;
+}
+.card button{
+    background-color: blue;
+    color: white;
+    width: 30%;
+    height: 40px;
+    border-radius: 7px ;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 0%;
+}
+.button button{
+    background-color: white;
+    color: blue;
+    border-radius: 3px;
+    width: 25px;
+    height: 25px;
+}
+.tablet{
+    display: none;
+}
+.desktop{
+    display: none;
+}
+/* footer */
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(0, 78, 142);
+    color: white;
+}
+.footer{
+    grid-area: footer;
+}
+footer img{
+    width: 30px;
+}
+/* media tablet */
+@media (min-width: 576px){
+    /* general */
+    .container{
+        display: grid;
+        grid-template-areas: 
+        "nav nav"
+        "filtro main"
+        "footer footer";
+        grid-template-rows: 100px 70% 100px;
+        grid-template-columns: 3fr 10fr;
+    }
+    /* nav */
+    .menu{
+        display: none;
+    }
+    .lista{
+        display: flex;
+    }
+    .lista ul{
+        display: flex;
+        flex-direction: row;
+    }
+    .lista li{
+        display: flex;
+        list-style: none;
+        padding-right: 30px;
+    }
+    /* filtro */
+    .filtro{
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 30px;
+    }
+    /* main */
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+    .cards{
+        display: flex;
+        flex-direction: row;
+    }
+    .button{
+        display: flex;
+        flex-direction: row;
+    }
+    .tablet{
+        display: flex;
+    }
+    /* footer */
+}
+/* media desktop */
+@media (min-width: 992px){
+    /* general */
+    .container{
+        display: grid;
+        grid-template-areas: 
+        "nav filtro"
+        "nav main"
+        "footer main";
+        grid-template-columns: 15% auto;
+        grid-template-rows: 100px 2fr 150px;
+    }
+    /* nav */
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 30px;
+    }
+    .lista{
+        display: flex;
+        padding: 50px;
+        text-align: center;
+    }
+    .lista ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .lista li{
+        padding-top: 20px;
+        list-style: none;
+    }
+    .menu{
+        display: none;
+    }
+    /* main */
+    .desktop{
+        display: flex;
+    }
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .button{
+        width: 300px;
+    }
+}
+    /* footer */
+    footer{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        padding: 25px;
+    }
